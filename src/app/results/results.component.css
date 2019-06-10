@@ -47,6 +47,7 @@ h2, h3 {
   position: relative;
   left: 45%;
   top: 100px;
+  height: 500px;
 }
 a {
   text-decoration: none;
@@ -79,6 +80,7 @@ button {
 }
 .qAndA {
   margin-left: 40px;
+  height: 400px;
   position: relative;
   width: 60%;
   /* left: 55%;
