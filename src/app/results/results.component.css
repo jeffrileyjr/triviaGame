@@ -1,0 +1,169 @@
+.usernameContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  z-index: 4;
+  width: 80vw;
+  height: 100%;
+}
+h2, h3 {
+  text-align: center;
+}
+
+.podium {
+  background-image: url(../../assets/podium.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+}
+.score {
+  position: relative;
+  /* top: 5%; */
+  left: 0;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 4;
+}
+.username {
+  font-family: 'Cedarville Cursive', cursive;
+  background-color: rgb(10, 10, 233);
+  font-size: 2.5em;
+  margin: 0;
+  position: relative;
+  top: -3%;
+  left: 20%;
+  padding-top: 15px;
+  padding-left: 5px;
+  line-height: 85%;
+  font-weight: 500;
+  /* text-align: center; */
+  height: 30vh;
+  width: 60%;
+}
+.userResultsContainer {
+  width: 50%;
+  position: relative;
+  left: 45%;
+  top: 100px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.prev {
+  position: relative;
+  z-index: 4;
+  left: 0;
+}
+.next {
+  position: absolute;
+  right: 0;
+}
+.right {
+  color: green;
+}
+.wrong {
+  color: red;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+.material-icons {
+  font-size: 50px;
+}
+.navigate {
+  color: white;
+}
+.qAndA {
+  margin-left: 40px;
+  position: relative;
+  width: 60%;
+  /* left: 55%;
+  transform: translateX(-50%); */
+  text-align: center;
+  font-size: 2.5rem;
+}
+/* 
+
+.userResultsContainer {
+  width: 300px;
+  border: 1px solid black;
+}
+.podium {
+  background-image: url(../../assets/podium.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+}
+
+.qAndA {
+  margin-left: 40px;
+  position: relative;
+  width: 60%;
+  left: 55%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 2.5rem;
+}
+ */
+@media only screen and (min-width: 768px) {
+  .podium {
+    position: relative;
+    width: 500px;
+    height: 600px;
+  }
+  .username {
+    position: relative;
+    left: 18%;
+    top: -10%;
+    height: 43%;
+    width: 62%;
+    margin: 0;
+    font-size: 5em;
+    text-align: center;
+  }
+  .score {
+     font-size: 4rem;
+     text-align: center;
+     z-index: 4;
+   }
+  /* .userScore {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 400px;
+  }
+  .score, .username {
+  
+    margin: 0;
+  }
+  .score {
+   top: 30%;
+    left: 2%; 
+    font-size: 4rem;
+    text-align: center;
+    z-index: 4;
+  }
+  .username {
+    position: relative;
+    left: 18%;
+    top: 30%;
+    height: 43%;
+    width: 63%;
+    margin: 0;
+    font-size: 5em;
+    text-align: center;
+  } 
+  .podium {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 600px;
+  } */
+}

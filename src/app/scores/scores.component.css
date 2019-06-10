@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+td {
+  padding: 20px;
+}
+tr {
+  text-align: center;
+}
+a {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+a:hover {
+  color: lightblue;
+}

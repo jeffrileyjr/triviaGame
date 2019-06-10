@@ -1,0 +1,35 @@
+<div class="usernameContainer">
+  <div>
+    <h2>Final Score</h2>
+    <h3><a href="./scores">Check Out The High Scores</a> </h3>
+  </div>
+  <div class="podium"> 
+  <p class="score">
+    {{ this.score }}
+  </p>
+   <p class="username">{{ this.username }}</p>
+</div>
+</div>
+<div class="userResultsContainer">  
+  <!-- <p> filler text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam nisi quidem! Deserunt minima asperiores, excepturi libero dolores, eius quam pariatur sapiente labore optio obcaecati sequi porro aspernatur alias similique.</p> -->
+  <div  *ngFor="let question of questionsAnswers; index as i">
+    <div *ngIf="i == this.resultNumber">
+      <span *ngIf="i == this.resultNumber"> Question {{ i + 1 }} of 10</span>
+
+      <div class="qAndA">
+        <p>{{ question.qA.question }}</p>
+        <p [ngClass]="{'right': this.choices[i] == this.questionsAnswers[i].qA.answer, 'wrong': this.choices[i] != this.questionsAnswers[i].qA.answer}" >{{ question.qA.answer }}</p>
+      </div>
+      <button class="prev" *ngIf="i > 0" (click)="previousAnswer()">
+          <i class="material-icons navigate">
+              navigate_before
+              </i>
+        </button>
+      <button class="next" type="button" *ngIf="i < 9" (click)="nextAnswer()">
+          <i class="material-icons navigate">
+              navigate_next
+              </i>
+      </button>
+    </div>
+  </div>
+</div>

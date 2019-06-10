@@ -1,0 +1,35 @@
+
+  <h1>Top Ten</h1>
+  <main> 
+  <section class="userScore">
+      <div>
+          <p>Your Score: {{ this.score }} </p>
+        </div>
+  </section>
+
+  <section class="topTen">
+    <table> 
+      <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let score of topTen; index as i">
+      <td> {{i+1}} </td>
+      <td> {{score.username}} </td>
+      <td> {{score.score}}  </td>
+    </tr>
+
+    </table>
+
+  </section>
+</main>
+
+<a href="./quiz">Play Again</a>
+
+<!-- <h1>Top Ten</h1>
+<div *ngFor="let score of topTen; index as i">
+  
+  <p> {{i+1}} {{ score.username }} : {{score.score}} </p>
+
+</div> -->

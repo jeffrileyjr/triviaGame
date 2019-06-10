@@ -1,0 +1,110 @@
+<h1>This is NOT Jeopardy</h1>
+<div class="usernameContainer" *ngIf="!capturedUsername">
+  <form #usernameForm="ngForm" (ngSubmit)="getUsername(usernameForm)">
+      <div class="nameInputContainer">  
+    <label for="">Your Name: </label>
+    <input
+      class="usernameInput"
+      type="text"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+    <button class="usernameBtn">
+            <i class="material-icons">
+                    play_arrow
+                    </i>
+    </button>
+</div>
+    <div class="podium">
+      <p class="username">{{ username }}</p>
+    </div>
+  </form>
+</div>
+<section *ngIf="showQuestions">
+  <div *ngFor="let question of questions; index as i">
+    <span *ngIf="i == this.questionNumber"> Question {{ i + 1 }} of 10</span>
+    <form
+      #quizForm="ngForm"
+      *ngIf="i == this.questionNumber"
+      (ngSubmit)="submitQuiz()"
+    >
+      <div class="question">
+        <p>{{ question.question_name }}</p>
+      </div>
+      <section class="userChoices">
+        <div class="radioChoices">
+          <input
+            type="radio"
+            name="choice{{i+1}}"
+            id="choice1"
+            value="{{ question.choice_1 }}"
+            [(ngModel)]="question.choice"
+          />
+          <label class="choices" for="choice1"> {{ question.choice_1 }} </label>
+        </div>
+        <div class="radioChoices">
+          <input
+            type="radio"
+            name="choice{{i+1}}"
+            id="choice2"
+            value="{{ question.choice_2 }}"
+            [(ngModel)]="question.choice"
+          />
+          <label class="choices" for="choice2"> {{ question.choice_2 }} </label>
+        </div>
+        <div class="radioChoices">
+          <input
+            type="radio"
+            name="choice{{i+1}}"
+            id="choice3"
+            value="{{ question.choice_3 }}"
+            [(ngModel)]="question.choice"
+          />
+          <label class="choices" for="choice3"> {{ question.choice_3 }} </label>
+        </div>
+        <div class="radioChoices">
+          <input
+            type="radio"
+            name="choice{{i+1}}"
+            id="choice4"
+            value="{{ question.choice_4 }}"
+            [(ngModel)]="question.choice"
+          />
+          <label class="choices" for="choice4"> {{ question.choice_4 }} </label>
+        </div>
+        <button
+          type="button"
+          *ngIf="i < 9"
+          (click)="
+            [
+              nextQuestion(question.choice),
+              getquestAnswers(question.question_name, question.answer)
+            ]
+          "
+        >
+          <i class="material-icons">
+            navigate_next
+          </i>
+        </button>
+        <button
+          *ngIf="i == 9"
+          (click)="
+            [
+              submitLastAnswer(question.choice),
+              getquestAnswers(question.question_name, question.answer)
+            ]
+          "
+        >
+          <i class="material-icons">
+            done_all
+          </i>
+        </button>
+      </section>
+    </form>
+  </div>
+</section>
+<!-- <app-results [questions]="questions" [score]="score">
+
+</app-results>
+  -->
